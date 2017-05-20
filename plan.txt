@@ -1,0 +1,81 @@
+
+Cancer{
+  Nutrient intake tied to body damage
+  intrinsically damages body
+  move and prolif
+  random mutation
+  antigen diffuses from (radar for dendritic cells)
+  Phenotypes{
+    Order{
+
+      production/economy{
+        angiogenic
+      }
+
+      attack/defense{
+        Glycolytic 
+        acid resist (long range attack (with diffusibles))
+      }
+
+      detection avoidance{
+      }
+
+      mutability
+      Early{
+        Rapid Div
+        Motility 
+        Immunosupressive (short range attack)
+        Antigen detection
+      }
+      Mid{
+        Anti-Inflamatory (M2 converting)
+        antibody evasion
+      }
+      Late{
+        Metastatic
+        MHC presenting
+      }
+    }
+  }
+}
+
+Immune{
+  Nutrient intake tied to body damage
+  Types{
+    Requires Antigen and MHC{
+      intrinsically damages body
+      Enhanced by Anibody{
+        nut cheap Scouts{
+      DendriticCells(collect antigen, detects cancer)
+        }
+        nut cheap Infantry{
+      Neutrophil(fast grunts)
+        }
+        Tanks{
+          Engulph and aoe damage{
+      nut medium Macrophage(releases oxygen reactive species, can also eat antibody marked cells)
+      nut expensive antigen light Basophyl(extreme Macrophage, immune to Anti-Inflamatory)
+      nut expensive antigen med Eosinophil(exteme Basophyl, immune to Anti-Inflamatory)
+          }
+        }
+        nut+antigen Antibody producers{
+      B_Cell(produces antibody, which binds to Cancer Cells, upgrades to MALT at blood vessel)
+        }
+      }
+    }
+
+    Require Antibody{
+        expensive Drone Strike{
+      T_Cell(kills antibody bound cells)
+        }
+    }
+
+    expensive nut, no antigen Require any{
+      NKCells(kills only? cells that are missing MHC class 1)
+    }
+    Interleukin8(inflamation signal)
+  }
+  Treatment{
+    if body damage goes beyond threshold, treatments are introduced?
+  }
+}
